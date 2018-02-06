@@ -4,4 +4,4 @@ that can be found on http://mmenavas.github.io/memory-game. Match each
 spectrogram to the sound associated to such on the photo.
 
 Angelynne Pawaan
-https://apawaan.github.io/memorygame/
+https://listeningtowaves.github.io/memorygame/
