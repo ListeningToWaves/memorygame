@@ -13,9 +13,10 @@
 /**
  * @namespace Card object
  */
-MemoryGame.Card = function(value, isMatchingCard) {
+MemoryGame.Card = function(value, mValue, isMatchingCard) {
   this.value = value;
   this.isRevealed = true;
+  this.mValue = mValue;
 
   if (isMatchingCard) {
     this.isMatchingCard = true;

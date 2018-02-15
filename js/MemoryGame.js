@@ -82,9 +82,9 @@ var MemoryGame = {
     var maxValue = (this.settings.columns * this.settings.rows) / 2;
     while (count < maxValue) {
       // Card A
-      cards[2 * count] = new this.Card(count + 1);
+      cards[2 * count] = new this.Card(count + 1, ((count + 1)*10));
       // Card B (matching card)
-      cards[2 * count + 1] = new this.Card(count + 1, true);
+      cards[2 * count + 1] = new this.Card(count + 1, 0, true);
       count++;
     }
 
@@ -136,62 +136,74 @@ var MemoryGame = {
     var cardSelection = [];
     var chosenCards = 0;
     var chosenValues = [];
+    var prev_mValue = 0; // value of previous card
 
     return function(index) {
       var status = {};
       var value = this.cards[index].value;
+      var mValue = this.cards[index].mValue;
       var audio;
-
-                  //audio.play();
 
       // If selected card is flipped
       if (this.cards[index].isRevealed) {
-
-
         // if statements that play sound
-        if (value == 1)
+        if (mValue == 10)
         {
           audio = new Audio('texttone.mp3');
           audio.play();
         }
-        else if (value == 2)
+        else if (mValue == 20)
         {
           audio = new Audio('honk.mp3');
           audio.play();
         }
-        else if (value == 3)
+        else if (mValue == 30)
         {
           audio = new Audio('keys.mp3');
           audio.play();
         }
-        else if (value == 4)
+        else if (mValue == 40)
         {
           audio = new Audio('meow.mp3');
           audio.play();
         }
-        else if (value == 5)
+        else if (mValue == 50)
         {
           audio = new Audio('clock.mp3');
           audio.play();
         }
-        else if (value == 6)
+        else if (mValue == 60)
         {
           audio = new Audio('cry.mp3');
           audio.play();
         }
-        else if (value == 7)
+        else if (mValue == 70)
         {
           audio = new Audio('cough.mp3');
           audio.play();
         }
-        else
+        else if (mValue == 80)
         {
             audio = new Audio('woo.mp3');
             audio.play();
         }
 
-        // Add card to cardSelection array
-        cardSelection.push(index);
+       // if first card being chosen, save value to prevValue
+       if (cardSelection.length == 0)
+       {
+         prev_mValue = this.cards[index].mValue;
+         //Add card to selection tray
+         cardSelection.push(index);
+       }
+       // if this is the second card being chosen, check if it's not the same
+       // as the first card
+       else if (prev_mValue == this.cards[index].mValue) {
+        window.alert("Can't choose the same card twice!");
+        }
+
+        else {
+          cardSelection.push(index);
+        }
 
         // if two cards have been chosen
         if (cardSelection.length == 2) {

@@ -217,7 +217,7 @@ body {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
   border-radius: 15%;
-  background-image: url(../images/yay.jpg);
+  background-image: url(../images/yay.png);
   background-position:50% 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -241,20 +241,38 @@ body {
 .back.card-1 {
   background-image: url(../images/things/iphone.jpg);
 }
+.back.matching.card-1 {
+  background-image: url(../images/things/s_iphone.jpg);
+}
 .back.card-2 {
   background-image: url(../images/things/wheel.jpg);
+}
+.back.matching.card-2 {
+  background-image: url(../images/things/s_honk.jpg);
 }
 .back.card-3 {
   background-image: url(../images/things/keys.jpg);
 }
+.back.matching.card-3 {
+  background-image: url(../images/things/s_keys.jpg);
+}
 .back.card-4 {
   background-image: url(../images/things/cat.jpg);
+}
+.back.matching.card-4 {
+  background-image: url(../images/things/s_cat.jpg);
 }
 .back.card-5 {
   background-image: url(../images/things/clock.jpg);
 }
+.back.matching.card-5 {
+  background-image: url(../images/things/s_clock.jpg);
+}
 .back.card-6 {
   background-image: url(../images/things/cry.jpg);
+}
+.back.matching.card-6 {
+  background-image: url(../images/things/s_cry.jpg);
 }
 .back.card-7 {
   background-image: url(../images/things/cough.jpg);
